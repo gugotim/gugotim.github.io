@@ -6,7 +6,16 @@ function handleLinks() {
     len = links.length;
   for(var i=0; i<len; i++) {
     handleDialog(links[i]);
+    handleLink(links[i]);
   }
+}
+function handleLink(element) {
+  EventUtil.addHandler(element, 'click', function(event) {
+    event = EventUtil.getEvent(event);
+    EventUtil.preventDefault(event);
+    var target = EventUtil.getTarget(event);
+    window.open(target.href);
+  });
 }
 function handleDialog(element) {
   EventUtil.addHandler(element, 'mouseover', function(event) {
