@@ -4,8 +4,7 @@ addLoadEvent(handleNavigation);
 //----- functions ----------//
 function handleNavigation() {
   var goLeft = document.getElementById('go-left');
-
-  goLeft.onclick = function(event) {
+  EventUtil.addHandler(goLeft, 'click', function(event) {
     var code = document.getElementById('code');
     var left = document.defaultView.getComputedStyle(code, null).left;
     if(left !== '0px') {//不为0，即小于0，未显现
@@ -13,7 +12,7 @@ function handleNavigation() {
     } else {
       code.style.left = '-240px';
     }
-  };
+  });
 }
 function handleLinks() {
   var links = document.querySelectorAll('#greetings p a'),
