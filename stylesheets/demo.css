@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+#content {
+  width: 100%;
+  height: 400px;
+  background-color: lightblue;
+  transition: margin 1.5s;
+}
+#side-bar-left {
+  position: absolute;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 400px;
+  background-color: lightgreen;
+  transition: left 1.5s;
+}
+#side-bar-right {
+  position: absolute;
+  top: 0;
+  right: -400px;
+  width: 400px;
+  height: 400px;
+  background-color: lightgreen;
+  transition: right 1.5s;
+}

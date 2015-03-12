@@ -1,8 +1,18 @@
 //----- main ----------------//
 addLoadEvent(handleLinks);
+addLoadEvent(handleNavigation);
 //----- functions ----------//
+function handleNavigation() {
+  var goLeft = document.getElementById('go-left');
+
+  goLeft.onclick = function(event) {
+    var code = document.getElementById('code');
+    code.style.left = '-100%';
+    code.style.textAlign = 'right';
+  };
+}
 function handleLinks() {
-  var links = document.getElementById('greetings').getElementsByTagName('a'),
+  var links = document.querySelectorAll('#greetings p a'),
     len = links.length;
   for(var i=0; i<len; i++) {
     handleDialog(links[i]);

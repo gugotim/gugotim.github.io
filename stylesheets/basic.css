@@ -15,7 +15,7 @@ body {
   min-width: 800px;
   width: 60%;
   height: 400px;
-  background-color: white;
+  background-color: yellow;
   opacity: 0.7;
 }
 #greetings p a {
@@ -26,6 +26,35 @@ body {
   background: url(../icons/glyphicons-51-link.png) no-repeat top left;
   background-size: 20px 15px;
   padding-left: 20px;
+}
+#navigator {
+  margin: 0 auto;
+  position: absolute;
+  border: 1px solid;
+  right:50%;
+  bottom: 10%;
+}
+#go-left{
+  background: url(../icons/glyphicons-211-left-arrow.png) no-repeat top left;
+  padding-left: 20px;
+  padding-right: 10px;
+  background-size: 20px;
+}
+#go-right{
+  background: url(../icons/glyphicons-212-right-arrow.png) no-repeat top right;
+  padding-right: 20px;
+  padding-left: 10px;
+  background-size: 20px;
+}
+#code {
+  height: 400px;
+  width: 30%;
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  left: -140%;
+  padding: 20px;
+  transition: left 1.5s;
 }
 #dialog {
   padding: 0px 10px;
