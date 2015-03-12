@@ -1,3 +1,21 @@
 body {
   margin: 0px;
+  /*background-color: #0971B2;*/
+  background-image: url(../images/background.jpg);
+}
+.absolute-vertical-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#greetings {
+  padding: 20px;
+  min-width: 800px;
+  width: 60%;
+  height: 400px;
+  background-color: white;
+  opacity: 0.7;
 }
