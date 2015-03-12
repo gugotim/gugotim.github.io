@@ -7,8 +7,12 @@ function handleNavigation() {
 
   goLeft.onclick = function(event) {
     var code = document.getElementById('code');
-    code.style.left = '-100%';
-    code.style.textAlign = 'right';
+    var left = document.defaultView.getComputedStyle(code, null).left;
+    if(left !== '0px') {//不为0，即小于0，未显现
+      code.style.left = '0';
+    } else {
+      code.style.left = '-240px';
+    }
   };
 }
 function handleLinks() {
