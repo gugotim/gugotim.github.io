@@ -57,6 +57,7 @@ body {
   transition: left 1.5s;
 }
 #dialog {
+  background-color: white;
   padding: 0px 10px;
   left: 0px;
   top: 20px;
