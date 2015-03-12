@@ -29,13 +29,11 @@ body {
 }
 #dialog {
   padding: 0px 10px;
-  background-color: white;
-  opacity: 1;
   left: 0px;
   top: 20px;
   display: none;
   position: absolute;
   border: 1px solid black;
-  width: 400px;
   height: 50px;
+  width: 350px;
 }
