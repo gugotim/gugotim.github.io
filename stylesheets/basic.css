@@ -1,7 +1,6 @@
 body {
   margin: 0px;
-  /*background-color: #0971B2;*/
-  background-image: url(../images/background.jpg);
+  background: black url(../images/background.jpg);
 }
 .absolute-vertical-center {
   position: absolute;
