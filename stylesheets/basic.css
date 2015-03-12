@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+#wrapper {
+  height: 100%;
+  border: 1px solid black;
+}
+#wrapper header {
+  height: 100px;
+  border: 1px solid black;
+}
+#content {
+  border: 1px solid black;
+  min-height: 400px;
+}
