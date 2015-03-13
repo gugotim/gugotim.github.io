@@ -15,7 +15,7 @@ body {
 header {
   height: 50px;
   line-height: 50px;
-  background-color: #333;
+  background-color: #14CCAA;
   color: white;
   border: none;
 }
@@ -47,6 +47,7 @@ header a {
   height: 50px;
   line-height: 50px;
   border: none;
+  background-color: #FFCB19;
 }
 #github div {
   float: left;
@@ -60,7 +61,7 @@ header a {
 }
 #blank {
   height: 100px;
-  /*background-color: #FF9419;*/
+  background-color: #F600FF;
   border: none;
 }
 #photo {
@@ -92,7 +93,7 @@ header a {
 }
 section.content, section.code, section.fun {
   height: 300px;
-  background-color: pink;
+  background-color: #00B291;
 }
 section.content {
   position: relative;
