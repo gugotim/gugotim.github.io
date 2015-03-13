@@ -9,10 +9,16 @@ function handleNavigator() {
     var curElement = content.dataset.curElement;
     switch(curElement) {
       case 'content':{
-        showFun();break;
+        showSection('fun');
+        disableButton('goLeft', true);
+        disableButton('goRight', false);
+        break;
       }
       case 'code': {
-        hideCode();break;
+        hideSection('code');
+        disableButton('goLeft', false);
+        disableButton('goRight', false);
+        break;
       }
       default: {}
     }
@@ -22,51 +28,52 @@ function handleNavigator() {
     var curElement = content.dataset.curElement;
     switch(curElement) {
       case 'content':{
-        showCode();break;
+        showSection('code');
+        disableButton('goRight', true);
+        disableButton('goLeft', false);
+        break;
       }
       case 'fun': {
-        hideFun();break;
+        hideSection('fun');
+        disableButton('goRight', false);
+        disableButton('goLeft', false);
+        break;
       }
       default: { }
     }
   };
 }
-function showCode() {
-  var content = document.querySelector('section.content');
-  var code = document.querySelector('section.code');
-  content.dataset.curElement = 'code';
-  code.style.left = '0';
-  code.style.zIndex = '1';
-  var goRight = document.getElementById('goRight');
-  goRight.setAttribute('disabled', 'disabled');
+function disableButton(id, disabled) {
+  var element = document.getElementById(id);
+  if(!element) return false;
+  if(disabled) {
+    element.setAttribute('disabled', 'disabled');
+  } else {
+    element.removeAttribute('disabled');
+  }
 }
-function hideCode() {
+function showSection(className) {
+  var element = document.querySelector('section.' + className);
   var content = document.querySelector('section.content');
-  var code = document.querySelector('section.code');
+  if(!element) return false;
+  content.dataset.curElement = className;
+  if(className === 'code') {
+    element.style.left = '0';
+    element.style.zIndex = '1';
+  } else if(className === 'fun') {
+    element.style.right = '0';
+    element.style.top = '200px';
+    element.style.zIndex = '1';
+  }
+}
+function hideSection(className) {
+  var element = document.querySelector('section.' + className);
+  var content = document.querySelector('section.content');
+  if(!element) return false;
   content.dataset.curElement = 'content';
-  code.style.left = '-100%';
-  var goRight = document.getElementById('goRight');
-  goRight.removeAttribute('disabled');
-  var goLeft = document.getElementById('goLeft');
-  goLeft.removeAttribute('disabled');
-}
-function showFun() {
-  var content = document.querySelector('section.content');
-  var fun = document.querySelector('section.fun');
-  content.dataset.curElement = 'fun';
-  fun.style.right = '0';
-  fun.style.top = '200px';
-  fun.style.zIndex = '1';
-  var goLeft = document.getElementById('goLeft');
-  goLeft.setAttribute('disabled', 'disabled');
-}
-function hideFun() {
-  var content = document.querySelector('section.content');
-  var fun = document.querySelector('section.fun');
-  content.dataset.curElement = 'content';
-  fun.style.right = '-100%';
-  var goRight = document.getElementById('goRight');
-  goRight.removeAttribute('disabled');
-  var goLeft = document.getElementById('goLeft');
-  goLeft.removeAttribute('disabled');
+  if(className === 'code') {
+    element.style.left = '-100%';
+  } else if(className === 'fun') {
+    element.style.right = '-100%';
+  }
 }

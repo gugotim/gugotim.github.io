@@ -19,9 +19,12 @@ header {
   color: white;
   border: none;
 }
-header h1 {
+header>p:first-child {
   float: left;
   margin: 0;
+}
+header>p:first-child a {
+  color: white;
 }
 ul {
   list-style: none;
@@ -40,7 +43,7 @@ header ul.icons {
   float: right;
   margin-right: 5%;
 }
-header a {
+header>a {
   float: right;
 }
 #github {
