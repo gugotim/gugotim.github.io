@@ -1,0 +1,156 @@
+body {
+  margin: 0px;
+  /*background-color: black;*/
+}
+#wrapper {
+  position: relative;
+  min-width: 1024px;
+  overflow: hidden;
+  background-color: white;
+}
+#github, #blank, #sns-info, section, nav, header, footer {
+  /*border: 1px solid black;*/
+  padding: 0 5%;
+}
+header {
+  height: 50px;
+  line-height: 50px;
+  background-color: #333;
+  color: white;
+  border: none;
+}
+header h1 {
+  float: left;
+  margin: 0;
+}
+ul {
+  list-style: none;
+  display: inline-block;
+  padding-left: 0;
+  margin: 0;
+}
+header ul li {
+  display: inline;
+}
+header ul.menu {
+  margin-left: 5%;
+  float: left;
+}
+header ul.icons {
+  float: right;
+  margin-right: 5%;
+}
+header a {
+  float: right;
+}
+#github {
+  height: 50px;
+  line-height: 50px;
+  border: none;
+}
+#github div {
+  float: left;
+  border: none;
+}
+#github ul {
+  float: right;
+}
+#github ul li span {
+  background-color: lightgreen;
+}
+#blank {
+  height: 100px;
+  /*background-color: #FF9419;*/
+  border: none;
+}
+#photo {
+  position: absolute;
+  height: 150px;
+  top: 50px;
+  right: 50%;
+  width: 200px;
+  margin-right: -100px;
+  text-align: center;
+  border: none;
+}
+#photo img {
+  margin: 0 auto;
+  border-radius: 50%;
+}
+#photo h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+#photo>p {
+  margin: 0;
+}
+#photo>p:nth-child(4) span {
+  /*color: #5B00FF;*/
+}
+#photo>p:nth-child(4) span:first-child {
+  margin-right: 20px;
+}
+section.content, section.code, section.fun {
+  height: 300px;
+  background-color: pink;
+}
+section.content {
+  position: relative;
+}
+section.content h3 {
+  display: inline-block
+}
+section.code, section.fun {
+  width: 90%;
+  position: absolute;
+  opacity: 0.9;
+}
+section.code {
+  background-color: green;
+  left: -100%;
+  transition: left 1.5s;
+}
+section.fun {
+  background-color: orange;
+  right: -100%;
+  transition: right 1.5s;
+}
+nav {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+#sns-info {
+  position: relative;
+  height: 100px;
+  line-height: 100px;
+  background-color: lightblue;
+}
+#sns-info img {
+  position: absolute;
+  top: 50%;
+  margin-top: -13px;
+}
+#sns-info span {
+  margin-left: 30px;
+}
+footer {
+  color: white;
+  height: 50px;
+  background-color: darkblue;
+}
+footer p {
+  display: inline-block;
+}
+.mybtn {
+  border-radius: 2em;
+  display: inline-block;
+  width: 100px;
+  height: 60px;
+  line-height: 60px;
+  background-color: lightgreen;
+  cursor: pointer;
+}
+.mybtn[disabled] {
+  background-color: #ddd;
+}

@@ -21,8 +21,10 @@ fadeAwayBtnL.onclick = function(event) {
 fadeInBtnR.onclick = function(event) {
   content.style.marginRight = '400px';
   sideBarR.style.right = '0px';
+  sideBarR.style.display = 'block';
 };
 fadeAwayBtnR.onclick = function(event) {
   content.style.marginRight = '0px';
   sideBarR.style.right = '-400px';
+  sideBarR.style.display = 'none';
 };
