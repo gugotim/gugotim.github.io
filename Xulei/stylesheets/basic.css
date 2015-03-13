@@ -6,7 +6,7 @@ body {
   position: relative;
   min-width: 1024px;
   overflow: hidden;
-  background-color: white;
+  /*background-color: white;*/
 }
 #github, #blank, #sns-info, section, nav, header, footer {
   /*border: 1px solid black;*/
@@ -15,7 +15,7 @@ body {
 header {
   height: 50px;
   line-height: 50px;
-  background-color: #14CCAA;
+  background-color: black;
   color: white;
   border: none;
 }
@@ -47,11 +47,15 @@ header a {
   height: 50px;
   line-height: 50px;
   border: none;
-  background-color: #FFCB19;
+  /*background-color: black;*/
 }
 #github div {
   float: left;
   border: none;
+}
+#github a {
+  text-decoration: none;
+  color: black;
 }
 #github ul {
   float: right;
@@ -61,7 +65,7 @@ header a {
 }
 #blank {
   height: 100px;
-  background-color: #F600FF;
+  background-color: #eee;
   border: none;
 }
 #photo {
@@ -93,7 +97,7 @@ header a {
 }
 section.content, section.code, section.fun {
   height: 300px;
-  background-color: #00B291;
+  background-color: #eee;
 }
 section.content {
   position: relative;
@@ -107,12 +111,12 @@ section.code, section.fun {
   opacity: 0.9;
 }
 section.code {
-  background-color: green;
+  /*background-color: green;*/
   left: -100%;
   transition: left 1.5s;
 }
 section.fun {
-  background-color: orange;
+  /*background-color: orange;*/
   right: -100%;
   transition: right 1.5s;
 }
@@ -125,7 +129,8 @@ nav {
   position: relative;
   height: 100px;
   line-height: 100px;
-  background-color: lightblue;
+  background-color: black;
+  color: white;
 }
 #sns-info img {
   position: absolute;
@@ -136,11 +141,15 @@ nav {
   margin-left: 30px;
 }
 footer {
-  color: white;
+  /*color: white;*/
   height: 50px;
-  background-color: darkblue;
+  /*background-color: darkblue;*/
 }
-footer p {
+footer p:first-child {
+  display: inline-block;
+}
+footer p:nth-child(2) {
+  float: right;
   display: inline-block;
 }
 .mybtn {
