@@ -1,4 +1,6 @@
-handleNavigator();
+//-------------------main------------------/
+addLoadEvent(handleNavigator);
+//-------------------functions------------------/
 function handleNavigator() {
   var content = document.querySelector('section.content');
   var goLeft = document.getElementById('goLeft');
