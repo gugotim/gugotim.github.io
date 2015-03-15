@@ -1,6 +1,19 @@
 //-------------------main------------------/
 addLoadEvent(handleNavigator);
+addLoadEvent(getBlog);
 //-------------------functions------------------/
+function getBlog() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatchange = function() {
+    if(xhr.readyState == 4) {
+      document.querySelector('section .content p').innerHTML = xhr.responseText;
+    } else {
+      document.querySelector('section .content p').innerHTML = 'ajax读取失败';
+    }
+  };   
+  xhr.open('get', 'blog/2015-3-15.txt', true);
+  xhr.send();
+}
 function handleNavigator() {
   var content = document.querySelector('section.content');
   var goLeft = document.getElementById('goLeft');

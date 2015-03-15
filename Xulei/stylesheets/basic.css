@@ -15,8 +15,8 @@ body {
 header {
   height: 50px;
   line-height: 50px;
-  background-color: black;
-  color: white;
+  /*background-color: black;*/
+  /*color: white;*/
   border: none;
 }
 header>p:first-child {
@@ -24,7 +24,7 @@ header>p:first-child {
   margin: 0;
 }
 header>p:first-child a {
-  color: white;
+  /*color: white;*/
 }
 ul {
   list-style: none;
