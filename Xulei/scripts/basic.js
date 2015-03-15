@@ -15,7 +15,7 @@ function getBlog() {
   };   
   // xhr.open('get', 'blogs/2015-3-15', true);
   xhr.open('get','http://api.github.com/repos/gugotim/summary/Http', true);
-  xhr.setRequestHeader('Access-Control-Allow-Origin','http://gugotim.github.io/Xulei');
+  // xhr.setRequestHeader('Access-Control-Allow-Origin','http://gugotim.github.io/Xulei');
   xhr.send();
 }
 function handleNavigator() {
