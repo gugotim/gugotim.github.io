@@ -22,6 +22,7 @@ function handleNavigator() {
   var goRight = document.getElementById('goRight');
   content.dataset.curElement = 'content';
   EventUtil.addHandler(goLeft, 'click' ,function(event) {
+    event = EventUtil.getEvent(event);
     event.preventDefault();
     var curElement = content.dataset.curElement;
     switch(curElement) {
@@ -39,8 +40,9 @@ function handleNavigator() {
       }
       default: {}
     }
-  };
+  });
   EventUtil.addHandler(goRight, 'click' ,function(event) {
+    event = EventUtil.getEvent(event);
     event.preventDefault();
     var curElement = content.dataset.curElement;
     switch(curElement) {
@@ -58,7 +60,7 @@ function handleNavigator() {
       }
       default: { }
     }
-  };
+  });
 }
 function disableButton(id, disabled) {
   var element = document.getElementById(id);
