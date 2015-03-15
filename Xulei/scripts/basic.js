@@ -15,6 +15,7 @@ function getBlog() {
   };   
   // xhr.open('get', 'blogs/2015-3-15', true);
   xhr.open('get', 'https://github.com/gugotim/summary/Http', true);
+  xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://gugotim.github.io');
   xhr.send();
 }
 function handleNavigator() {
