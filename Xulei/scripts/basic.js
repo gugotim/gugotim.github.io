@@ -14,7 +14,7 @@ function getBlog() {
     }
   };   
   // xhr.open('get', 'blogs/2015-3-15', true);
-  xhr.open('get', 'http://github.com/gugotim/summary/Http', true);
+  xhr.open('get', 'https://github.com/gugotim/summary/Http', true);
   xhr.send();
 }
 function handleNavigator() {
