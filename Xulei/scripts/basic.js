@@ -16,6 +16,12 @@ function handleShowDialog(img) {
     var div = document.getElementById('dialog');
     var imgHolder = document.querySelector('#dialog div>img');
     imgHolder.src = img.src;
+    imgHolder.onclick = function(event) {
+      var src = imgHolder.src;
+      if(src.search('UIHomeWork') != '-1') {
+        window.open('UIHomeWork/index.html');
+      }
+    };
     div.style.display = 'block';
   };
 }
