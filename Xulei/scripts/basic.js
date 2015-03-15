@@ -81,7 +81,7 @@ function showSection(className) {
     element.style.zIndex = '1';
   } else if(className === 'fun') {
     element.style.right = '0';
-    element.style.top = '300px';
+    element.style.top = '350px';
     element.style.zIndex = '1';
   }
 }

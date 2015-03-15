@@ -47,8 +47,8 @@ header>a {
   float: right;
 }
 #github {
-  height: 50px;
-  line-height: 50px;
+  height: 100px;
+  line-height: 100px;
   border: none;
   /*background-color: #FFC6B4;*/
 }
@@ -84,6 +84,8 @@ header>a {
 }
 #photo img {
   margin: 10px auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 10px solid #eee;
 }
