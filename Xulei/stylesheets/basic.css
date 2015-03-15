@@ -15,8 +15,8 @@ body {
 header {
   height: 50px;
   line-height: 50px;
-  /*background-color: black;*/
-  /*color: white;*/
+  background-color: #92A1B2;
+  color: white;
   border: none;
 }
 header>p:first-child {
@@ -24,7 +24,7 @@ header>p:first-child {
   margin: 0;
 }
 header>p:first-child a {
-  /*color: white;*/
+  color: white;
 }
 ul {
   list-style: none;
@@ -50,7 +50,7 @@ header>a {
   height: 50px;
   line-height: 50px;
   border: none;
-  /*background-color: #eee;*/
+  /*background-color: #FFC6B4;*/
 }
 #github div {
   float: left;
@@ -67,9 +67,10 @@ header>a {
   background-color: lightgreen;
 }
 #blank {
-  height: 100px;
+  height: 200px;
   background-color: #eee;
   border: none;
+  /*border-bottom: 1px solid black;*/
 }
 #photo {
   position: absolute;
@@ -82,8 +83,9 @@ header>a {
   border: none;
 }
 #photo img {
-  margin: 0 auto;
+  margin: 10px auto;
   border-radius: 50%;
+  border: 10px solid #eee;
 }
 #photo h2 {
   margin: 0;
@@ -100,7 +102,7 @@ header>a {
 }
 section.content, section.code, section.fun {
   height: 300px;
-  background-color: #eee;
+  background-color: #CDE5FF;
 }
 section.content {
   position: relative;
@@ -124,15 +126,17 @@ section.fun {
   transition: right 1.5s;
 }
 nav {
+  /*border-top: 1px solid black;*/
   height: 100px;
   line-height: 100px;
   text-align: center;
+  /*background-color: #7E88B2;*/
 }
 #sns-info {
   position: relative;
   height: 100px;
   line-height: 100px;
-  background-color: black;
+  background-color: #92A1B2;
   color: white;
 }
 #sns-info img {
@@ -146,7 +150,7 @@ nav {
 footer {
   /*color: white;*/
   height: 50px;
-  /*background-color: darkblue;*/
+  /*background-color: #FFC6B4;*/
 }
 footer p:first-child {
   display: inline-block;
