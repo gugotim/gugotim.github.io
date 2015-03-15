@@ -111,7 +111,22 @@ section.content {
   position: relative;
 }
 section.content h3 {
-  display: inline-block
+  /*display: inline-block;*/
+  float: left;
+  margin: 0;
+}
+section.content img {
+  float: left;
+  width: 17.5%;
+  height: 120px;
+  margin-top: 160px;
+  margin-right: 10%;
+}
+section.content img:hover {
+  cursor: pointer;
+}
+section.content img:nth-child(4n) {
+  margin-right: 0;
 }
 section.code, section.fun {
   width: 90%;
@@ -173,4 +188,39 @@ footer p:nth-child(2) {
 }
 .mybtn[disabled] {
   background-color: #ddd;
+}
+#dialog {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.9;
+}
+#dialog div {
+  position: relative;
+}
+#dialog div>img {
+  position: absolute;
+  top: 325px;
+  margin-top: -300px;
+  height: 600px;
+  /*margin-left: -30%;*/
+  left: 10%;
+  width: 80%;
+}
+#dialog div a img {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border: 4px solid white;
+  border-radius: 50% 50% 50% 50%;
 }

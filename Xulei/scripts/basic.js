@@ -1,10 +1,36 @@
 //-------------------main------------------/
 addLoadEvent(handleNavigator);
-addLoadEvent(getBlog);
+// addLoadEvent(getBlog);
+addLoadEvent(handleDialog);
 //-------------------functions------------------/
+function handleDialog() {
+  var imgs = document.querySelectorAll('section.content img'),
+    len = imgs.length;
+  for(var i=0; i<len; i++) {
+    handleShowDialog(imgs[i]);
+  }
+  handleClose();
+}
+function handleShowDialog(img) {
+  img.onclick = function() {
+    var div = document.getElementById('dialog');
+    var imgHolder = document.querySelector('#dialog div>img');
+    imgHolder.src = img.src;
+    div.style.display = 'block';
+  };
+}
+function handleClose() {
+  var div = document.getElementById('dialog');
+  var close = document.getElementById('close');
+  close.onclick = function(event) {
+    event.preventDefault();
+    div.style.display = 'none';
+  };
+}
 function getBlog() {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
+    if(!document.querySelector('section.content p')) return;
     if(xhr.readyState == 4 ) {
       if(xhr.status >= 200 && xhr.status <=300 || xhr.status == 304) {
         document.querySelector('section.content p').innerHTML = xhr.responseText;
@@ -12,7 +38,7 @@ function getBlog() {
         document.querySelector('section.content p').innerHTML = 'ajax读取失败';
       }
     }
-  };   
+  };
   xhr.open('get', 'blogs/2015-3-15', true);
   xhr.send();
 }
