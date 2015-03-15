@@ -11,7 +11,7 @@ function getBlog() {
       document.querySelector('section.content p').innerHTML = 'ajax读取失败';
     }
   };   
-  xhr.open('get', 'blogs/2015-3-15.txt', true);
+  xhr.open('get', 'blogs/2015-3-15', true);
   xhr.send();
 }
 function handleNavigator() {
