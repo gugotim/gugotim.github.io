@@ -5,10 +5,12 @@ addLoadEvent(getBlog);
 function getBlog() {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if(xhr.readyState == 4 && xhr.status == 200) {
-      document.querySelector('section.content p').innerHTML = xhr.responseText;
-    } else {
-      document.querySelector('section.content p').innerHTML = 'ajax读取失败';
+    if(xhr.readyState == 4 ) {
+      if(xhr.status >= 200 && xhr.status <=300 || xhr.status == 304) {
+        document.querySelector('section.content p').innerHTML = xhr.responseText;
+      } else {
+        document.querySelector('section.content p').innerHTML = 'ajax读取失败';
+      }
     }
   };   
   xhr.open('get', 'blogs/2015-3-15', true);
