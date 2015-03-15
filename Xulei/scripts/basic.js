@@ -4,8 +4,8 @@ addLoadEvent(getBlog);
 //-------------------functions------------------/
 function getBlog() {
   var xhr = new XMLHttpRequest();
-  xhr.onreadystatchange = function() {
-    if(xhr.readyState == 4) {
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState == 4 && xhr.status == 200) {
       document.querySelector('section.content p').innerHTML = xhr.responseText;
     } else {
       document.querySelector('section.content p').innerHTML = 'ajax读取失败';
