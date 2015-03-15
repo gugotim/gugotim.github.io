@@ -6,9 +6,9 @@ function getBlog() {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatchange = function() {
     if(xhr.readyState == 4) {
-      document.querySelector('section .content p').innerHTML = xhr.responseText;
+      document.querySelector('section.content p').innerHTML = xhr.responseText;
     } else {
-      document.querySelector('section .content p').innerHTML = 'ajax读取失败';
+      document.querySelector('section.content p').innerHTML = 'ajax读取失败';
     }
   };   
   xhr.open('get', 'blogs/2015-3-15.txt', true);
