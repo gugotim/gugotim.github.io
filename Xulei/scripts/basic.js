@@ -21,7 +21,7 @@ function handleNavigator() {
   var goLeft = document.getElementById('goLeft');
   var goRight = document.getElementById('goRight');
   content.dataset.curElement = 'content';
-  goLeft.onclick = function(event) {
+  EventUtil.addHanlder(goLeft, 'click' ,function(event) {
     event.preventDefault();
     var curElement = content.dataset.curElement;
     switch(curElement) {
@@ -40,7 +40,7 @@ function handleNavigator() {
       default: {}
     }
   };
-  goRight.onclick = function(event) {
+  EventUtil.addHanlder(goRight, 'click' ,function(event) {
     event.preventDefault();
     var curElement = content.dataset.curElement;
     switch(curElement) {
