@@ -1,56 +1,132 @@
-//----- main ----------------//
-addLoadEvent(handleLinks);
-addLoadEvent(handleNavigation);
-//----- functions ----------//
-function handleNavigation() {
-  var goLeft = document.getElementById('go-left');
-  EventUtil.addHandler(goLeft, 'click', function(event) {
-    var code = document.getElementById('code');
-    var left = document.defaultView.getComputedStyle(code, null).left;
-    if(left !== '0px') {//不为0，即小于0，未显现
-      code.style.left = '0';
-    } else {
-      code.style.left = '-240px';
+//-------------------main------------------/
+addLoadEvent(handleNavigator);
+// addLoadEvent(getBlog);
+addLoadEvent(handleDialog);
+//-------------------functions------------------/
+function handleDialog() {
+  var imgs = document.querySelectorAll('section.content img'),
+    len = imgs.length;
+  for(var i=0; i<len; i++) {
+    handleShowDialog(imgs[i]);
+  }
+  handleClose();
+}
+function handleShowDialog(img) {
+  img.onclick = function() {
+    var div = document.getElementById('dialog');
+    var imgHolder = document.querySelector('#dialog div>img');
+    imgHolder.src = img.src;
+    imgHolder.onclick = function(event) {
+      var src = imgHolder.src;
+      if(src.search('UIHomeWork') != -1) {
+        window.open('UIHomeWork/index.html');
+      } else if(src.search('asp') != -1) {
+        window.open('http://github.com/gugotim/asp.net');
+      }
+    };
+    div.style.display = 'block';
+  };
+}
+function handleClose() {
+  var div = document.getElementById('dialog');
+  var close = document.getElementById('close');
+  close.onclick = function(event) {
+    event.preventDefault();
+    div.style.display = 'none';
+  };
+}
+function getBlog() {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if(!document.querySelector('section.content p')) return;
+    if(xhr.readyState == 4 ) {
+      if(xhr.status >= 200 && xhr.status <=300 || xhr.status == 304) {
+        document.querySelector('section.content p').innerHTML = xhr.responseText;
+      } else {
+        document.querySelector('section.content p').innerHTML = 'ajax读取失败';
+      }
+    }
+  };
+  xhr.open('get', 'blogs/2015-3-15', true);
+  xhr.send();
+}
+function handleNavigator() {
+  var content = document.querySelector('section.content');
+  var goLeft = document.getElementById('goLeft');
+  var goRight = document.getElementById('goRight');
+  content.dataset.curElement = 'content';
+  EventUtil.addHandler(goLeft, 'click' ,function(event) {
+    event = EventUtil.getEvent(event);
+    event.preventDefault();
+    var curElement = content.dataset.curElement;
+    switch(curElement) {
+      case 'content':{
+        showSection('fun');
+        disableButton('goLeft', true);
+        disableButton('goRight', false);
+        break;
+      }
+      case 'code': {
+        hideSection('code');
+        disableButton('goLeft', false);
+        disableButton('goRight', false);
+        break;
+      }
+      default: {}
+    }
+  });
+  EventUtil.addHandler(goRight, 'click' ,function(event) {
+    event = EventUtil.getEvent(event);
+    event.preventDefault();
+    var curElement = content.dataset.curElement;
+    switch(curElement) {
+      case 'content':{
+        showSection('code');
+        disableButton('goRight', true);
+        disableButton('goLeft', false);
+        break;
+      }
+      case 'fun': {
+        hideSection('fun');
+        disableButton('goRight', false);
+        disableButton('goLeft', false);
+        break;
+      }
+      default: { }
     }
   });
 }
-function handleLinks() {
-  var links = document.querySelectorAll('#greetings p a'),
-    len = links.length;
-  for(var i=0; i<len; i++) {
-    handleDialog(links[i]);
-    handleLink(links[i]);
+function disableButton(id, disabled) {
+  var element = document.getElementById(id);
+  if(!element) return false;
+  if(disabled) {
+    element.setAttribute('disabled', 'disabled');
+  } else {
+    element.removeAttribute('disabled');
   }
 }
-function handleLink(element) {
-  EventUtil.addHandler(element, 'click', function(event) {
-    event = EventUtil.getEvent(event);
-    EventUtil.preventDefault(event);
-    var target = EventUtil.getTarget(event);
-    window.open(target.href);
-  });
+function showSection(className) {
+  var element = document.querySelector('section.' + className);
+  var content = document.querySelector('section.content');
+  if(!element) return false;
+  content.dataset.curElement = className;
+  if(className === 'code') {
+    element.style.left = '0';
+    element.style.zIndex = '1';
+  } else if(className === 'fun') {
+    element.style.right = '0';
+    element.style.top = '350px';
+    element.style.zIndex = '1';
+  }
 }
-function handleDialog(element) {
-  EventUtil.addHandler(element, 'mouseover', function(event) {
-    event = EventUtil.getEvent(event);
-    var target = EventUtil.getTarget(event);
-    showDialog(target);
-  });
-  EventUtil.addHandler(element, 'mouseout', function(event) {
-    event = EventUtil.getEvent(event);
-    var target = EventUtil.getTarget(event);
-    hideDialog(target);
-  });
-}
-function showDialog(target) {
-  var dialog = document.getElementById('dialog');
-  target.appendChild(dialog);
-  dialog.style.display = 'inline-block';
-  dialog.getElementsByTagName('p')[0].innerHTML = '你想去' + target.href;
-}
-function hideDialog(target) {
-  var dialog = document.getElementById('dialog');
-  document.body.appendChild(dialog);
-  dialog.style.display = 'none';
-  dialog.getElementsByTagName('p')[0].innerHTML = '';
+function hideSection(className) {
+  var element = document.querySelector('section.' + className);
+  var content = document.querySelector('section.content');
+  if(!element) return false;
+  content.dataset.curElement = 'content';
+  if(className === 'code') {
+    element.style.left = '-100%';
+  } else if(className === 'fun') {
+    element.style.right = '-100%';
+  }
 }

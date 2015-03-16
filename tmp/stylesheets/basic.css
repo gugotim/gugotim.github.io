@@ -1,0 +1,71 @@
+body {
+  margin: 0px;
+  background: url(../images/background.jpg);
+}
+.absolute-vertical-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+#greetings {
+  padding: 20px;
+  min-width: 800px;
+  width: 60%;
+  height: 400px;
+  background-color: yellow;
+  opacity: 0.7;
+}
+#greetings p a {
+  color: black;
+  position: relative;
+}
+#greetings p a:hover {
+  background: url(../icons/glyphicons-51-link.png) no-repeat top left;
+  background-size: 20px 15px;
+  padding-left: 20px;
+}
+#navigator {
+  margin: 0 auto;
+  position: absolute;
+  right:50%;
+  margin-right: -30px;
+  bottom: 10%;
+}
+#go-left{
+  background: url(../icons/glyphicons-211-left-arrow.png) no-repeat top left;
+  padding-left: 20px;
+  padding-right: 10px;
+  background-size: 20px;
+}
+#go-right{
+  background: url(../icons/glyphicons-212-right-arrow.png) no-repeat top right;
+  padding-right: 20px;
+  padding-left: 10px;
+  background-size: 20px;
+}
+#code {
+  height: 400px;
+  width: 200px;
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  transition: left 1.5s;
+  top: 50%;
+  margin-top: -220px;
+  padding: 20px;
+  left: -240px;
+}
+#dialog {
+  background-color: white;
+  padding: 0px 10px;
+  left: 0px;
+  top: 20px;
+  display: none;
+  position: absolute;
+  border: 1px solid black;
+  height: 50px;
+  width: 350px;
+}
