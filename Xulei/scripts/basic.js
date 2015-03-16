@@ -18,8 +18,10 @@ function handleShowDialog(img) {
     imgHolder.src = img.src;
     imgHolder.onclick = function(event) {
       var src = imgHolder.src;
-      if(src.search('UIHomeWork') != '-1') {
+      if(src.search('UIHomeWork') != -1) {
         window.open('UIHomeWork/index.html');
+      } else if(src.search('asp') != -1) {
+        window.open('http://github.com/gugotim/asp.net');
       }
     };
     div.style.display = 'block';
