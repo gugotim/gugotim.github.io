@@ -22,6 +22,9 @@ body {
   color: black;
   position: relative;
 }
+#greetings p a.specify {
+  font-weight: bold;
+}
 #greetings p a:hover {
   background: url(../icons/glyphicons-51-link.png) no-repeat top left;
   background-size: 20px 15px;
