@@ -2,7 +2,17 @@
 addLoadEvent(handleNavigator);
 // addLoadEvent(getBlog);
 addLoadEvent(handleDialog);
+addLoadEvent(popUp);
 //-------------------functions------------------/
+function popUp() {
+  var pop = document.getElementById('popup');
+  setTimeout(function(){
+    pop.style.top = '0';
+  }, 1000);
+  setTimeout(function(){
+    pop.style.top = '-50px';
+  }, 4000);  
+}
 function handleDialog() {
   var imgs = document.querySelectorAll('section.content img'),
     len = imgs.length;
