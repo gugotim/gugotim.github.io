@@ -38,6 +38,7 @@ header {
 header>p:first-child {
   float: left;
   margin: 0;
+  font-weight: bold;
 }
 header>p:first-child a {
   color: white;
@@ -55,6 +56,10 @@ header ul.menu {
   margin-left: 5%;
   float: left;
 }
+header ul.menu a {
+  color: black;
+  font-weight: bold;
+}
 header ul.icons {
   float: right;
   margin-right: 5%;
@@ -65,22 +70,48 @@ header>a {
 #github {
   height: 100px;
   line-height: 100px;
-  border: none;
-  /*background-color: #FFC6B4;*/
+  position: relative;
 }
 #github div {
-  float: left;
-  border: none;
+  position: absolute;
+  border: 4px solid black;
+}
+#github div img {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  margin-top: 20px;
 }
 #github a {
   text-decoration: none;
   color: black;
 }
+#github a span {
+  margin-left: 60px;  
+}
 #github ul {
-  float: right;
+  position: absolute;
+  right: 5%;
+}
+#github ul li {
+
 }
 #github ul li span {
   background-color: lightgreen;
+  display: block;
+  height: 60px;
+  width: 100px;
+  line-height: 60px;
+  text-align: center;
+  margin-top: 19px;
+  border: 1px solid black;
+  padding-left: 60px;
+  background: lightgreen url(../icons/github.gif) no-repeat;
+  background-size: 60px 60px;
+}
+#github ul li span:hover {
+  border: 4px solid black;
+  margin-top: 18px;
 }
 #blank {
   height: 200px;

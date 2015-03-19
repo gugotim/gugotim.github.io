@@ -3,7 +3,18 @@ addLoadEvent(handleNavigator);
 // addLoadEvent(getBlog);
 addLoadEvent(handleDialog);
 addLoadEvent(popUp);
+addLoadEvent(handleLinks);
 //-------------------functions------------------/
+function handleLinks() {
+  var links = document.getElementsByTagName('a'),
+    len = links.length;
+  for(var i=0; i<len; i++) {
+    EventUtil.addHandler(links[i], 'click', function(event) {
+      event.preventDefault();
+      window.open(this.href);
+    });
+  }
+}
 function popUp() {
   var pop = document.getElementById('popup');
   setTimeout(function(){
