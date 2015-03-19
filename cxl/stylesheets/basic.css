@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  transition: bottom 1.5s, top 1.5s, scroll 1.5s;
+  /*overflow: hidden;*/
+}
+#wrapper {
+  /*position: relative;*/
+}
+#leftDoor, #rightDoor {
+  width: 50%;
+  position: fixed;
+  z-index: 2;
+  height: 100%;
+  top: 0;
+}
+#leftDoor {
+  left: 0;
+  background-color: red;
+  transition: left 1.5s;
+}
+#rightDoor {
+  right: 0;
+  background-color: pink;
+  transition: right 1.5s;
+}
+.mybtn {
+  position: absolute;  
+  z-index: 1;
+  left: 0;
+  width: 50px;
+  height: 100px;
+  top: 300px;
+  margin-top: -50px;
+  background-color: #eee;
+  text-align: center;
+  line-height: 100px;
+}
+.mybtn:hover {
+  border: 4px solid black;
+  margin-top: -52px;
+}
+#main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: margin-top 1.5s;
+}
+#main sidebar, #content, #intro {
+  /*height: 600px;*/
+  height: 100%;
+  position: absolute;
+}
+div#main sidebar {
+  left: 0;
+  width: 25%;
+  background-color: lightgreen;
+  transition: left 1.5s;
+}
+#content {
+  left: 25%;
+  right: 0;
+  /*border: 4px solid black;*/
+  background-color: lightblue;
+  transition: left 1.5s;
+}
+#intro {
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: yellow;
+  transition: top 1.5s;
+}
+#switch, .goNext {
+  text-align: center;
+  line-height: 50px;
+  width: 100px;
+  height: 50px;
+  background-color: #eee;
+}
+#switch:hover, .goNext:hover {
+  border: 4px solid black;
+}
+footer {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  top: 200%;
+}
