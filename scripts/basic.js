@@ -9,10 +9,13 @@ function handleLinks() {
   var links = document.getElementsByTagName('a'),
     len = links.length;
   for(var i=0; i<len; i++) {
-    EventUtil.addHandler(links[i], 'click', function(event) {
-      event.preventDefault();
-      window.open(this.href);
-    });
+    if(links[i].id != 'close') {
+      EventUtil.addHandler(links[i], 'click', function(event) {
+        event.preventDefault();
+        window.open(this.href);
+      });      
+    }
+
   }
 }
 function popUp() {
