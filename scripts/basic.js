@@ -4,7 +4,30 @@ addLoadEvent(handleNavigator);
 addLoadEvent(handleDialog);
 addLoadEvent(popUp);
 addLoadEvent(handleLinks);
+addLoadEvent(handleIcons);
 //-------------------functions------------------/
+function handleIcons() {
+  var icons = document.querySelectorAll('.icons>li'),
+    len = icons.length, ul;
+  for(var i=0; i<len; i++) {
+    icons[i].addEventListener('mouseover', function(event) {
+      ul = this.getElementsByTagName('ul')[0];
+      if(ul) {
+        var width = document.defaultView.getComputedStyle(this, null).width;
+        ul.style.display = 'block';
+        if(width > document.defaultView.getComputedStyle(ul, null).width) {
+          ul.style.width = width;
+        }
+      }
+    }, false);
+    icons[i].addEventListener('mouseout', function(event) {
+      ul = this.getElementsByTagName('ul')[0];
+      if(ul) {
+        ul.style.display = 'none';
+      }
+    }, false);    
+  }
+}
 function handleLinks() {
   var links = document.getElementsByTagName('a'),
     len = links.length;
@@ -15,7 +38,6 @@ function handleLinks() {
         window.open(this.href);
       });      
     }
-
   }
 }
 function popUp() {
